@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    tools:context=".Add_new_student">
+
+
+    <ScrollView
+        android:id="@+id/sroll1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/add_student_dialog_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="#ffff"
+                android:hint="Name"
+                android:padding="10dp" />
+
+
+            <EditText
+                android:id="@+id/add_student_dialog_Rollno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="#ffff"
+                android:hint="Roll No."
+                android:inputType="textCapCharacters"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/add_student_dialog_Branch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="#ffff"
+                android:hint="Branch (BBB)"
+                android:inputType="textCapCharacters"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/add_student_dialog_Year"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="#ffff"
+                android:hint="Year (1/2/3/4)"
+                android:inputType="number"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/add_student_dialog_HostelNo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="#ffff"
+                android:hint="Hostel No. (1/2/3/4/5/6)"
+                android:inputType="number"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/add_student_dialog_Gender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="#ffff"
+                android:hint="Gender (M/F)"
+                android:inputType="textCapCharacters"
+                android:padding="10dp" />
+
+
+            <EditText
+                android:id="@+id/add_student_dialog_FathersName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="#ffff"
+                android:hint="Fathers Name"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/add_student_dialog_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="#ffff"
+                android:hint="email Id"
+                android:inputType="textWebEmailAddress"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/add_student_dialog_Room"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="#ffff"
+                android:hint="Room No"
+                android:inputType="number"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/add_student_dialog_Address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="#ffff"
+                android:hint="Address"
+                android:inputType="textLongMessage"
+                android:padding="10dp" />
+
+
+            <EditText
+                android:id="@+id/add_student_dialog_Password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="#ffff"
+                android:hint="password"
+                android:padding="10dp" />
+
+
+
+
+            <EditText
+                android:id="@+id/add_student_dialog_Contact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="#ffff"
+                android:hint="Contact No."
+                android:inputType="number"
+                android:padding="10dp" />
+
+            <Button
+                android:id="@+id/butnSign"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:onClick="studentSignUp"
+                android:padding="20dp"
+                android:paddingLeft="40dp"
+                android:paddingRight="40dp"
+                android:text="Sign Up" />
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</RelativeLayout>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "696193684206",
+    "firebase_url": "https://gitshnb.firebaseio.com",
+    "project_id": "gitshnb",
+    "storage_bucket": "gitshnb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:696193684206:android:f8268da00659e28f3419ff",
+        "android_client_info": {
+          "package_name": "com.example.gitshnb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "696193684206-2dmp8rig749bdihv74hemnf5ieknrql3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.gitshnb",
+            "certificate_hash": "48421be39f90fe6f6da5f78d2ab5e620022714d8"
+          }
+        },
+        {
+          "client_id": "696193684206-34j026pehc9kimo1tlvbep7p02einu7k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLRXgTWOHdmKBKUkwMns7rclrrqjs-tHk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "696193684206-34j026pehc9kimo1tlvbep7p02einu7k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
