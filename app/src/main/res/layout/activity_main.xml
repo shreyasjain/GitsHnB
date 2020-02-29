@@ -26,7 +26,8 @@
         android:layout_below="@+id/Butn_Hostel_Facilities"
         android:layout_margin="40dp"
         android:padding="30dp"
-        android:text="Bus Facilities" />
+        android:text="Bus Facilities"
+        android:onClick="BusFacility"/>
 
 
 </RelativeLayout>

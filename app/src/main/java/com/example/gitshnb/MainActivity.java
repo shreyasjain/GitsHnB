@@ -10,7 +10,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void hostelJump(View view)
     {
-        Intent i = new Intent(getApplicationContext(), Add_new_user.class);
+        Intent i = new Intent(getApplicationContext(), LoginActivity.class);
+        startActivity(i);
+    }
+
+    public void BusFacility(View view)
+    {
+        Intent i = new Intent(getApplicationContext(), LoginActivity.class);
         startActivity(i);
     }
     @Override

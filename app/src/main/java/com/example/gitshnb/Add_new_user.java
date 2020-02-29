@@ -16,7 +16,7 @@ public class Add_new_user extends AppCompatActivity {
 
     public void newStudentMethod(View view)
     {
-        Intent i = new Intent(getApplicationContext(), Add_new_student.class);
+        Intent i = new Intent(getApplicationContext(), LoginActivity.class);
         startActivity(i);
     }
 
