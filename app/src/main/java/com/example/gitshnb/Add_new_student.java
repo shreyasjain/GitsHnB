@@ -2,11 +2,15 @@ package com.example.gitshnb;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -40,12 +44,15 @@ public class Add_new_student extends AppCompatActivity {
     EditText studentBranchEdittext;
     EditText studentHostelNoEdittext;
     EditText studentGenderEdittext;
+    String sessionId;
     Button butnSignUp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_new_student);
+
+        sessionId = getIntent().getStringExtra("key");
 
         studentNameEdittext = (EditText)findViewById(R.id.add_student_dialog_name);
         studentRollEdittext = (EditText)findViewById((R.id.add_student_dialog_Rollno));
@@ -94,7 +101,7 @@ public class Add_new_student extends AppCompatActivity {
 
         DatabaseReference reff2 = database.getReference().child("USERS").child(userId);
         reff2.child("PASSWORD").setValue(password);
-        reff2.child("TYPE").setValue("student");
+        reff2.child("TYPE").setValue("studentHostel");
         DatabaseReference reff = database.getReference().child("DETAILS").child("STUDENT").child(userId);
         reff.child("Name").setValue(name);
         reff.child("YEAR").setValue(year);
@@ -106,5 +113,39 @@ public class Add_new_student extends AppCompatActivity {
         reff.child("BRANCH").setValue(branch);
         reff.child("HOSTEL").setValue(hostelNo);
         reff.child("GENDER").setValue(gender);
+
+        DatabaseReference reff1 = database.getReference().child("DETAILS").child("STUDENT").child(name);
+        reff1.child("USERID").setValue(userId);
+        reff1.child("YEAR").setValue(year);
+        reff1.child("FATHERSNAME").setValue(fathersName);
+        reff1.child("EMAIL").setValue(emailId);
+        reff1.child("ADDRESS").setValue(address);
+        reff1.child("CONTACT").setValue(contactNo);
+        reff1.child("ROOM").setValue(roomNo);
+        reff1.child("BRANCH").setValue(branch);
+        reff1.child("HOSTEL").setValue(hostelNo);
+        reff1.child("GENDER").setValue(gender).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Toast.makeText(getApplicationContext(),"Student Registered successfully",Toast.LENGTH_SHORT).show();
+
+
+                new CountDownTimer(1500,1000)
+                {
+                    @Override
+                    public void onFinish() {
+                        Intent i = new Intent(Add_new_student.this, Add_new_user.class);
+                        i.putExtra("key",sessionId);
+                        startActivity(i);
+
+                    }
+
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+
+                    }
+                }.start();
+            }
+        });
     }
 }

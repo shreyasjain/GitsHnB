@@ -20,9 +20,11 @@
             android:layout_margin="10dp"
             android:background="#ffff"
             android:hint="First Name"
+            android:inputType="textPersonName"
             android:padding="10dp" />
 
         <EditText
+            android:inputType="textPersonName"
             android:id="@+id/add_faculty_Bus_lastname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -32,6 +34,7 @@
             android:padding="10dp" />
 
         <EditText
+
             android:id="@+id/add_faculty_Bus_Contact"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

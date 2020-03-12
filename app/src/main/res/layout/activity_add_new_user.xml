@@ -24,9 +24,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/textCat"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="40dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="20dp"
         android:onClick="newFacultyMethod"
         android:padding="30dp"
         android:text="Add new Faculty" />
@@ -37,12 +37,27 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/Butn_add_student"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="40dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="20dp"
         android:onClick="newStudentMethod"
         android:padding="30dp"
         android:text="Add new Student" />
+
+    <Button
+        android:id="@+id/Student_Complaints_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Butn_Bus_Facilities"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="20dp"
+        android:onClick="StudentComplaints"
+        android:padding="30dp"
+        android:text="Student complaints" />
+
+
 
 
 </RelativeLayout>

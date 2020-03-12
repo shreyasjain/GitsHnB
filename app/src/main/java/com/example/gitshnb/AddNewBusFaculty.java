@@ -2,11 +2,15 @@ package com.example.gitshnb;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -27,11 +31,14 @@ public class AddNewBusFaculty extends AppCompatActivity {
     EditText FacultyPasswordEdittext;
     EditText FacultyGenderEdittext;
     Button butnSignUp;
+    String sessionId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_new_bus_faculty);
+
+        sessionId = getIntent().getStringExtra("key");
 
         FacultyFisrtNameEdittext = (EditText)findViewById(R.id.add_faculty_Bus_firstname);
         FacultyLastNameEdittext = (EditText)findViewById(R.id.add_faculty_Bus_lastname);
@@ -69,6 +76,28 @@ public class AddNewBusFaculty extends AppCompatActivity {
         reff.child("FIRSTNAME").setValue(FirstName);
         reff.child("LASTNAME").setValue(LastName);
         reff.child("CONTACT").setValue(contactNo);
-        reff.child("GENDER").setValue(gender);
+        reff.child("GENDER").setValue(gender).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Toast.makeText(getApplicationContext(),"Faculty Registered successfully",Toast.LENGTH_SHORT).show();
+
+
+                new CountDownTimer(1500,1000)
+                {
+                    @Override
+                    public void onFinish() {
+                        Intent i = new Intent(AddNewBusFaculty.this, AddNewBusUser.class);
+                        i.putExtra("key",sessionId);
+                        startActivity(i);
+
+                    }
+
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+
+                    }
+                }.start();
+            }
+        });
     }
 }

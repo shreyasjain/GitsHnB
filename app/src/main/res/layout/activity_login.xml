@@ -30,6 +30,7 @@
         android:layout_margin="10dp"
         android:background="#ffff"
         android:hint="UserId"
+        android:inputType="textCapCharacters"
         android:padding="10dp" />
 
     <EditText

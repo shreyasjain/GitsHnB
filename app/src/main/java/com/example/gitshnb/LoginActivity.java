@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -23,6 +24,7 @@ public class LoginActivity extends AppCompatActivity {
 
     EditText LoginUsernameEdittext;
     EditText LoginPasswordEdittext;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +50,7 @@ public class LoginActivity extends AppCompatActivity {
         password = LoginPasswordEdittext.getText().toString();
         //  name = FirstName+" "+LastName;
     }
-
+    String wrongPass = "Wrong Password";
     public void signInChecker()
     {
         DatabaseReference postRef = database.getReference().child("USERS");
@@ -90,8 +92,12 @@ public class LoginActivity extends AppCompatActivity {
                     }
                     else{
                         Log.i(RetPassword,password);
+                        Toast.makeText(getApplicationContext(), "Incorrect Password !",
+                                Toast.LENGTH_LONG).show();
                     }
                 } else{
+                    Toast.makeText(getApplicationContext(), "Incorrect UserId",
+                            Toast.LENGTH_LONG).show();
                     Log.i("wrong","UserId "+username);
                 }
             }

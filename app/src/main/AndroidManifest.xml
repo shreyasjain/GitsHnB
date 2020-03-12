@@ -16,7 +16,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AddNewBusUser"></activity>
+        <activity android:name=".studentComplaintList"></activity>
+        <activity android:name=".HostlerPasswordChange" />
+        <activity android:name=".HostelStudentComplaint" />
+        <activity android:name=".AddNewBusUser" />
         <activity android:name=".AddNewBusStudent" />
         <activity android:name=".AddNewBusFaculty" />
         <activity android:name=".AddNewDriver" />

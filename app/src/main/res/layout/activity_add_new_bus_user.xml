@@ -55,7 +55,7 @@
         android:layout_marginBottom="40dp"
         android:onClick="newDriverMethod"
         android:padding="30dp"
-        android:text="Add new Faculty" />
+        android:text="Add new Driver" />
 
 
 </RelativeLayout>
