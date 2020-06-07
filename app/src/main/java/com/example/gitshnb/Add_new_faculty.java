@@ -11,12 +11,14 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class Add_new_faculty extends AppCompatActivity {
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
+    private FirebaseAuth mAuth ;
 
     String FirstName;
     String LastName;
@@ -40,6 +42,8 @@ public class Add_new_faculty extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_new_faculty);
+
+        mAuth = FirebaseAuth.getInstance();
         sessionId = getIntent().getStringExtra("key");
         FacultyFisrtNameEdittext = (EditText)findViewById(R.id.add_faculty_dialog_firstname);
         FacultyLastNameEdittext = (EditText)findViewById(R.id.add_faculty_dialog_lastname);
@@ -48,7 +52,6 @@ public class Add_new_faculty extends AppCompatActivity {
         FacultyPasswordEdittext = (EditText)findViewById(R.id.add_faculty_dialog_Password);
         FacultyGenderEdittext = (EditText)findViewById(R.id.add_faculty_dialog_Gender);
         butnSignUp = (Button)findViewById(R.id.butnSignF);
-
     }
 
     public void facultySignUp(View view)
@@ -65,9 +68,6 @@ public class Add_new_faculty extends AppCompatActivity {
         hostelNo = FacultyHostelEdittext.getText().toString();
         password = FacultyPasswordEdittext.getText().toString();
         gender = FacultyGenderEdittext.getText().toString();
-
-      //  name = FirstName+" "+LastName;
-
     }
 
     public void writeData()
@@ -75,7 +75,6 @@ public class Add_new_faculty extends AppCompatActivity {
         DatabaseReference reff2 = database.getReference().child("USERS").child(contactNo);
         reff2.child("PASSWORD").setValue(password);
         reff2.child("TYPE").setValue("facultyHostel");
-
         DatabaseReference reff = database.getReference().child("DETAILS").child("FACULTY").child(contactNo);
         reff.child("FIRSTNAME").setValue(FirstName);
         reff.child("LASTNAME").setValue(LastName);
@@ -85,8 +84,6 @@ public class Add_new_faculty extends AppCompatActivity {
             @Override
             public void onSuccess(Void aVoid) {
                 Toast.makeText(getApplicationContext(),"Faculty Registered successfully",Toast.LENGTH_SHORT).show();
-
-
                 new CountDownTimer(1500,1000)
                 {
                     @Override
@@ -96,7 +93,6 @@ public class Add_new_faculty extends AppCompatActivity {
                         startActivity(i);
 
                     }
-
                     @Override
                     public void onTick(long millisUntilFinished) {
 

@@ -62,7 +62,7 @@ public class AddNewBusStudent extends AppCompatActivity {
         butnSignUp = (Button)findViewById(R.id.butnSign);
     }
 
-    public  void studentSignUp(View view)
+    public  void studentBusSignUp(View view)
     {
         getData();
         writeData();

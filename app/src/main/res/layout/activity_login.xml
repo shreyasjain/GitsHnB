@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="#d1234e"
     tools:context=".LoginActivity">
 
     <LinearLayout
@@ -28,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:background="#ffff"
+        android:background="@drawable/style_edittext"
         android:hint="UserId"
         android:inputType="textCapCharacters"
         android:padding="10dp" />
@@ -38,7 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:background="#ffff"
+        android:background="@drawable/style_edittext"
         android:inputType="textPassword"
         android:hint="Password"
         android:padding="10dp" />
@@ -49,6 +49,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:onClick="signIn"
+            android:background="@drawable/style_button"
             android:padding="20dp"
             android:paddingLeft="40dp"
             android:paddingRight="40dp"

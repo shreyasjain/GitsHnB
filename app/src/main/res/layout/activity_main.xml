@@ -4,30 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="#d1234e"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/Butn_Hostel_Facilities"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="40dp"
-        android:onClick="hostelJump"
-        android:padding="30dp"
-        android:text="Hostel Facilities" />
 
-    <Button
-        android:id="@+id/Butn_Bus_Facilities"
-        android:layout_width="match_parent"
+    <ImageView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/Butn_Hostel_Facilities"
-        android:layout_margin="40dp"
-        android:padding="30dp"
-        android:text="Bus Facilities"
-        android:onClick="BusFacility"/>
+        app:srcCompat="@drawable/gits_splash"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"/>
 
 
 </RelativeLayout>

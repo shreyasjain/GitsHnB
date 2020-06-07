@@ -34,7 +34,8 @@ public class Add_new_user extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if((int)dataSnapshot.getChildrenCount()!=0)
                 {
-                    butnStudentComplaints.setBackgroundColor(R.drawable.student_complaint_button);
+                    butnStudentComplaints.setBackgroundResource(R.drawable.complaint_button);
+
                 }
             }
 
@@ -64,6 +65,13 @@ public class Add_new_user extends AppCompatActivity {
     public void StudentComplaints(View view)
     {
         Intent i = new Intent(getApplicationContext(), studentComplaintList.class);
+        i.putExtra("key",sessionId);
+        startActivity(i);
+    }
+
+    public void viewStudentDetail(View view)
+    {
+        Intent i = new Intent(getApplicationContext(), StudentDetail.class);
         i.putExtra("key",sessionId);
         startActivity(i);
     }

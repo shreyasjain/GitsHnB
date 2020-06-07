@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="#d1234e"
     android:orientation="vertical"
     tools:context=".AddNewBusFaculty">
 
@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:background="#ffff"
+            android:background="@drawable/style_edittext"
             android:hint="First Name"
             android:inputType="textPersonName"
             android:padding="10dp" />
@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:background="#ffff"
+            android:background="@drawable/style_edittext"
             android:hint="Last Name"
             android:padding="10dp" />
 
@@ -39,7 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:background="#ffff"
+            android:background="@drawable/style_edittext"
             android:hint="Contact No."
             android:inputType="number"
             android:padding="10dp" />
@@ -50,7 +50,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:background="#ffff"
+            android:background="@drawable/style_edittext"
             android:hint="Gender (M/F)"
             android:inputType="textCapCharacters"
             android:padding="10dp" />
@@ -60,13 +60,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:background="#ffff"
+            android:background="@drawable/style_edittext"
             android:inputType="textPassword"
             android:hint="Password"
             android:padding="10dp" />
 
 
         <Button
+            android:background="@drawable/style_button"
             android:id="@+id/butnSignBusF"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

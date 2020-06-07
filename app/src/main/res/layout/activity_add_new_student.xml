@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="#d1234e"
     android:orientation="vertical"
     tools:context=".Add_new_student">
 
@@ -25,7 +25,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:background="#ffff"
+                android:background="@drawable/style_edittext"
                 android:hint="Name"
                 android:padding="10dp" />
 
@@ -35,7 +35,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:background="#ffff"
+                android:background="@drawable/style_edittext"
                 android:hint="Roll No."
                 android:inputType="textCapCharacters"
                 android:padding="10dp" />
@@ -45,7 +45,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:background="#ffff"
+                android:background="@drawable/style_edittext"
                 android:hint="Branch (BBB)"
                 android:inputType="textCapCharacters"
                 android:padding="10dp" />
@@ -55,7 +55,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:background="#ffff"
+                android:background="@drawable/style_edittext"
                 android:hint="Year (1/2/3/4)"
                 android:inputType="number"
                 android:padding="10dp" />
@@ -65,7 +65,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:background="#ffff"
+                android:background="@drawable/style_edittext"
                 android:hint="Hostel No. (1/2/3/4/5/6)"
                 android:inputType="number"
                 android:padding="10dp" />
@@ -75,7 +75,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:background="#ffff"
+                android:background="@drawable/style_edittext"
                 android:hint="Gender (M/F)"
                 android:inputType="textCapCharacters"
                 android:padding="10dp" />
@@ -86,7 +86,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:background="#ffff"
+                android:background="@drawable/style_edittext"
                 android:hint="Fathers Name"
                 android:padding="10dp" />
 
@@ -95,7 +95,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:background="#ffff"
+                android:background="@drawable/style_edittext"
                 android:hint="email Id"
                 android:inputType="textWebEmailAddress"
                 android:padding="10dp" />
@@ -105,7 +105,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:background="#ffff"
+                android:background="@drawable/style_edittext"
                 android:hint="Room No"
                 android:inputType="number"
                 android:padding="10dp" />
@@ -115,7 +115,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:background="#ffff"
+                android:background="@drawable/style_edittext"
                 android:hint="Address"
                 android:inputType="textLongMessage"
                 android:padding="10dp" />
@@ -126,7 +126,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:background="#ffff"
+                android:background="@drawable/style_edittext"
                 android:hint="password"
                 android:padding="10dp" />
 
@@ -138,7 +138,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:background="#ffff"
+                android:background="@drawable/style_edittext"
                 android:hint="Contact No."
                 android:inputType="number"
                 android:padding="10dp" />
@@ -146,6 +146,7 @@
             <Button
                 android:id="@+id/butnSign"
                 android:layout_width="wrap_content"
+                android:background="@drawable/style_button"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:onClick="studentSignUp"

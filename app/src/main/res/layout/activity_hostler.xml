@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="#d1234e"
     tools:context=".HostlerActivity">
 
     <LinearLayout
@@ -21,6 +21,7 @@
 
 
         <Button
+            android:background="@drawable/style_button"
             android:id="@+id/Butn_Hosteler_attendance"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -33,6 +34,7 @@
             android:text="Mark Attendance" />
 
         <Button
+            android:background="@drawable/style_button"
             android:id="@+id/Butn_Hosteler_complaint"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -45,16 +47,30 @@
             android:text="complaint" />
 
         <Button
+            android:background="@drawable/style_button"
             android:id="@+id/Butn_Hosteler_changePassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="40dp"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="20dp"
             android:onClick="hostelerChangePassword"
             android:padding="20dp"
             android:text="change your password" />
+
+        <Button
+            android:background="@drawable/style_button"
+            android:id="@+id/Butn_Hosteler_ViewNotices"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="40dp"
+            android:onClick="ViewNotices"
+            android:padding="20dp"
+            android:text="Notices" />
 
     </LinearLayout>
 

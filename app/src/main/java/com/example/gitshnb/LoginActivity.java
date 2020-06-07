@@ -3,7 +3,9 @@ package com.example.gitshnb;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -15,15 +17,20 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.database.annotations.NotNull;
 
 public class LoginActivity extends AppCompatActivity {
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     String username;
     String password;
+    String savedUsername;
+    String savedPassword;
 
     EditText LoginUsernameEdittext;
     EditText LoginPasswordEdittext;
+    SharedPreferences sharedPreferences;
+
 
 
     @Override
@@ -31,16 +38,28 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        sharedPreferences = this.getSharedPreferences("com.example.gitshnb", Context.MODE_PRIVATE);
+
+
         LoginPasswordEdittext = (EditText)findViewById(R.id.Login_Password);
         LoginUsernameEdittext = (EditText)findViewById(R.id.Login_UserId);
+
+        if(sharedPreferences.getString("username","").length()!=0)
+        {
+            username = sharedPreferences.getString("username","");
+            password = sharedPreferences.getString("password","");
+            signInChecker();
+        }
 
 
     }
 
     public void signIn(View view)
     {
-        getData();
-        signInChecker();
+            getData();
+            signInChecker();
+
+
 
     }
 
@@ -53,6 +72,9 @@ public class LoginActivity extends AppCompatActivity {
     String wrongPass = "Wrong Password";
     public void signInChecker()
     {
+
+
+
         DatabaseReference postRef = database.getReference().child("USERS");
         postRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -61,6 +83,8 @@ public class LoginActivity extends AppCompatActivity {
                     String RetPassword = (String)dataSnapshot.child(username).child("PASSWORD").getValue();
                     String RetType = (String)dataSnapshot.child(username).child("TYPE").getValue();
                     if(RetPassword.equals(password)){
+                        sharedPreferences.edit().putString("username",username).apply();
+                        sharedPreferences.edit().putString("password",password).apply();
                         if(RetType.equals("studentBus")){
                             Intent i = new Intent(LoginActivity.this, WhichBusLocation.class);
                             i.putExtra("key",username);
@@ -88,6 +112,7 @@ public class LoginActivity extends AppCompatActivity {
                             startActivity(i);
 
                         }
+
                         Log.i("Logged","In");
                     }
                     else{

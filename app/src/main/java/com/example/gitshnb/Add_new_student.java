@@ -114,6 +114,9 @@ public class Add_new_student extends AppCompatActivity {
         reff.child("HOSTEL").setValue(hostelNo);
         reff.child("GENDER").setValue(gender);
 
+        DatabaseReference reff3 = database.getReference().child("HOSTELS").child(hostelNo);
+        reff3.child("USERID").setValue(userId);
+
         DatabaseReference reff1 = database.getReference().child("DETAILS").child("STUDENT").child(name);
         reff1.child("USERID").setValue(userId);
         reff1.child("YEAR").setValue(year);

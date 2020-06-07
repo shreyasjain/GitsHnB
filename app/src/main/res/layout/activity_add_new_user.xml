@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="#d1234e"
     tools:context=".Add_new_user">
 
     <TextView
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:padding="25dp"
-        android:text="User Category"
+        android:text="Warden"
         android:textAllCaps="true"
         android:textSize="40sp"
         android:textStyle="bold|italic" />
@@ -23,12 +23,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textCat"
+        android:background="@drawable/style_button"
         android:layout_marginStart="40dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="20dp"
         android:onClick="newFacultyMethod"
-        android:padding="30dp"
+        android:padding="15dp"
         android:text="Add new Faculty" />
 
     <Button
@@ -39,9 +40,10 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="40dp"
+        android:background="@drawable/style_button"
         android:layout_marginBottom="20dp"
         android:onClick="newStudentMethod"
-        android:padding="30dp"
+        android:padding="15dp"
         android:text="Add new Student" />
 
     <Button
@@ -50,12 +52,27 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/Butn_Bus_Facilities"
         android:layout_marginStart="40dp"
+        android:background="@drawable/style_button"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="20dp"
         android:onClick="StudentComplaints"
-        android:padding="30dp"
+        android:padding="15dp"
         android:text="Student complaints" />
+
+    <Button
+        android:id="@+id/Butn_Bus_Student_Detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Student_Complaints_button"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/style_button"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="40dp"
+        android:onClick="viewStudentDetail"
+        android:padding="15dp"
+        android:text="Search Student Detail" />
 
 
 
