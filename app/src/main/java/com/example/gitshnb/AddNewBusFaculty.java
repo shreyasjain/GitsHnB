@@ -89,6 +89,7 @@ public class AddNewBusFaculty extends AppCompatActivity {
                         Intent i = new Intent(AddNewBusFaculty.this, AddNewBusUser.class);
                         i.putExtra("key",sessionId);
                         startActivity(i);
+                        finish();
 
                     }
 

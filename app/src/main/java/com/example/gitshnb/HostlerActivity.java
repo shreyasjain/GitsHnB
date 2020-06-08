@@ -24,8 +24,11 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -48,6 +51,7 @@ public class HostlerActivity extends AppCompatActivity {
     SimpleDateFormat parseFormat = new SimpleDateFormat("h:mm a");
     SimpleDateFormat keyFormat = new SimpleDateFormat("EEE, MMM d, ''yy");
     Button butnHostlerAttendance;
+    Button butnViewNotices;
     TextView UserIdTextView;
     double latitude;
     double longitude;
@@ -79,6 +83,28 @@ public class HostlerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hostler);
+
+        sessionId = getIntent().getStringExtra("key");
+
+        butnViewNotices = (Button)findViewById(R.id.Butn_Hosteler_ViewNotices);
+
+        DatabaseReference complaintRef = database.getReference().child("NOTICE").child("HOSTEL");
+        complaintRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if((int)dataSnapshot.getChildrenCount()!=0)
+                {
+                    butnViewNotices.setBackgroundResource(R.drawable.complaint_button);
+                    butnViewNotices.setText("NOTICES "+"("+dataSnapshot.getChildrenCount()+")");
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
 
 
@@ -154,6 +180,8 @@ public class HostlerActivity extends AppCompatActivity {
         UserIdTextView = (TextView)findViewById(R.id.userId_Text);
         sessionId = getIntent().getStringExtra("key");
         UserIdTextView.setText(sessionId);
+
+
     }
 
     public void hostelerComplaint(View view)
@@ -167,6 +195,13 @@ public class HostlerActivity extends AppCompatActivity {
     public void hostelerChangePassword(View view)
     {
         Intent i = new Intent(this, HostlerPasswordChange.class);
+        i.putExtra("key",sessionId);
+        startActivity(i);
+    }
+
+    public void ViewNotices(View view)
+    {
+        Intent i = new Intent(getApplicationContext(), NoticeList.class);
         i.putExtra("key",sessionId);
         startActivity(i);
     }

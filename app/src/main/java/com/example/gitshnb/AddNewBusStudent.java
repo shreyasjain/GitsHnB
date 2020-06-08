@@ -98,38 +98,29 @@ public class AddNewBusStudent extends AppCompatActivity {
         reff.child("ADDRESS").setValue(address);
         reff.child("CONTACT").setValue(contactNo);
         reff.child("BRANCH").setValue(branch);
-        reff.child("GENDER").setValue(gender);
-
-        DatabaseReference reff1 = database.getReference().child("DETAILS").child("STUDENT").child(name);
-        reff1.child("USERID").setValue(userId);
-        reff1.child("YEAR").setValue(year);
-        reff1.child("FATHERSNAME").setValue(fathersName);
-        reff1.child("EMAIL").setValue(emailId);
-        reff1.child("ADDRESS").setValue(address);
-        reff1.child("CONTACT").setValue(contactNo);
-        reff1.child("BRANCH").setValue(branch);
-        reff1.child("GENDER").setValue(gender).addOnSuccessListener(new OnSuccessListener<Void>() {
-        @Override
-        public void onSuccess(Void aVoid) {
-            Toast.makeText(getApplicationContext(),"Student Registered successfully",Toast.LENGTH_SHORT).show();
+        reff.child("GENDER").setValue(gender).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Toast.makeText(getApplicationContext(),"Faculty Registered successfully",Toast.LENGTH_SHORT).show();
 
 
-            new CountDownTimer(1500,1000)
-            {
-                @Override
-                public void onFinish() {
-                    Intent i = new Intent(AddNewBusStudent.this, AddNewBusUser.class);
-                    i.putExtra("key",sessionId);
-                    startActivity(i);
+                new CountDownTimer(1500,1000)
+                {
+                    @Override
+                    public void onFinish() {
+                        Intent i = new Intent(AddNewBusStudent.this, AddNewBusUser.class);
+                        i.putExtra("key",sessionId);
+                        startActivity(i);
+                        finish();
 
-                }
+                    }
 
-                @Override
-                public void onTick(long millisUntilFinished) {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
 
-                }
-            }.start();
-        }
-    });
+                    }
+                }.start();
+            }
+        });
     }
 }

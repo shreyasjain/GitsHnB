@@ -69,10 +69,24 @@
         android:layout_marginTop="15dp"
         android:background="@drawable/style_button"
         android:layout_marginEnd="40dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="20dp"
         android:onClick="viewStudentDetail"
         android:padding="15dp"
         android:text="Search Student Detail" />
+
+    <Button
+        android:id="@+id/Butn_Bus_Faculty_Notice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Butn_Bus_Student_Detail"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/style_button"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="40dp"
+        android:onClick="AddStudentNotice"
+        android:padding="15dp"
+        android:text="Add a Notice" />
 
 
 

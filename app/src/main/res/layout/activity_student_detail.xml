@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#d1234e"
+    tools:context=".StudentDetail">
+
+    <TextView
+        android:id="@+id/textCat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:padding="25dp"
+        android:text="Student Details"
+        android:textAllCaps="true"
+        android:textSize="40sp"
+        android:textStyle="bold|italic" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:id="@+id/searchBy"
+        android:layout_below="@id/textCat"
+        android:text="Search By :"
+        android:textSize="25sp"
+        android:textStyle="bold|italic"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:orientation="horizontal"
+        android:layout_below="@id/searchBy"
+        android:id="@+id/buttonLinearLayout">
+
+        <Button
+            android:background="@drawable/style_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="Username/NAME"
+            android:id="@+id/usernameSearch"
+            android:layout_margin="5dp"
+
+            />
+    </LinearLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/studentDetailListview"
+        android:layout_below="@+id/buttonLinearLayout"
+        android:padding="10dp"/>
+
+</RelativeLayout>

@@ -16,7 +16,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-        <activity android:name=".StudentDetail"></activity>
+        <activity android:name=".NoticeList"></activity>
+        <activity android:name=".WardenNotice" />
+        <activity android:name=".StudentDetail" />
         <activity android:name=".studentComplaintList" />
         <activity android:name=".HostlerPasswordChange" />
         <activity android:name=".HostelStudentComplaint" />

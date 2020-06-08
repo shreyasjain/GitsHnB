@@ -102,7 +102,7 @@ public class Add_new_student extends AppCompatActivity {
         DatabaseReference reff2 = database.getReference().child("USERS").child(userId);
         reff2.child("PASSWORD").setValue(password);
         reff2.child("TYPE").setValue("studentHostel");
-        DatabaseReference reff = database.getReference().child("DETAILS").child("STUDENT").child(userId);
+        DatabaseReference reff = database.getReference().child("DETAILS").child("STUDENT").child("HOSTEL").child(userId);
         reff.child("Name").setValue(name);
         reff.child("YEAR").setValue(year);
         reff.child("FATHERSNAME").setValue(fathersName);
@@ -115,22 +115,10 @@ public class Add_new_student extends AppCompatActivity {
         reff.child("GENDER").setValue(gender);
 
         DatabaseReference reff3 = database.getReference().child("HOSTELS").child(hostelNo);
-        reff3.child("USERID").setValue(userId);
-
-        DatabaseReference reff1 = database.getReference().child("DETAILS").child("STUDENT").child(name);
-        reff1.child("USERID").setValue(userId);
-        reff1.child("YEAR").setValue(year);
-        reff1.child("FATHERSNAME").setValue(fathersName);
-        reff1.child("EMAIL").setValue(emailId);
-        reff1.child("ADDRESS").setValue(address);
-        reff1.child("CONTACT").setValue(contactNo);
-        reff1.child("ROOM").setValue(roomNo);
-        reff1.child("BRANCH").setValue(branch);
-        reff1.child("HOSTEL").setValue(hostelNo);
-        reff1.child("GENDER").setValue(gender).addOnSuccessListener(new OnSuccessListener<Void>() {
+        reff3.child("USERID").setValue(userId).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
-                Toast.makeText(getApplicationContext(),"Student Registered successfully",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Faculty Registered successfully",Toast.LENGTH_SHORT).show();
 
 
                 new CountDownTimer(1500,1000)
@@ -140,6 +128,7 @@ public class Add_new_student extends AppCompatActivity {
                         Intent i = new Intent(Add_new_student.this, Add_new_user.class);
                         i.putExtra("key",sessionId);
                         startActivity(i);
+                        finish();
 
                     }
 
@@ -150,5 +139,7 @@ public class Add_new_student extends AppCompatActivity {
                 }.start();
             }
         });
+
+
     }
 }
